@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
+import PageTitle from "./components/PageTitle";
 
 function App() {
   return (
     <div>
-      <h1> Hello World</h1>
+      <PageTitle>To Do List</PageTitle>
     </div>
   );
 }
 
-export default App;
+export default App; 
