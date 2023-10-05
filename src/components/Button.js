@@ -2,25 +2,28 @@ import React from "react";
 import styles from "../styles/modules/button.module.scss";
 import { getClasses } from "../utils/helper";
 
+
 const buttonTypes = {
-  primary: "primary",
-  secondary: "secondary",
+  primary: 'primary',
+  secondary: 'secondary',
 };
 
-const Button = ({ children, type, variant = "primary", ...rest }) => {
+function Button({ type, variant = 'primary', children, ...rest }) {
   return (
     <button
+      type={type === 'submit' ? 'submit' : 'button'}
       className={getClasses([
         styles.button,
         styles[`button--${buttonTypes[variant]}`],
       ])}
-      type={type === "submit" ? "submit" : "button"}
+      {...rest}
     >
       {children}
     </button>
   );
-};
-export const SelectButton = ({ children, id, ...rest }) => {
+}
+
+function SelectButton({ children, id, ...rest }) {
   return (
     <select
       id={id}
@@ -30,6 +33,7 @@ export const SelectButton = ({ children, id, ...rest }) => {
       {children}
     </select>
   );
-};
+}
 
+export { SelectButton };
 export default Button;
