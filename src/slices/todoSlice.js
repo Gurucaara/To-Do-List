@@ -2,10 +2,18 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const getInitialTodo = () => {
   const localTodoList = window.localStorage.getItem("todoList");
-  if (localTodoList) {
-    return JSON.parse(localTodoList);
+  try {
+    if (localTodoList) {
+      return JSON.parse(localTodoList);
+    }
+  } catch (error) {
+    console.error("Error parsing local storage data:", error);
+    // Reset local storage data to a default state
+    window.localStorage.setItem("todoList", JSON.stringify([]));
   }
+  return [];
 };
+
 
 const initialValue = {
   todoList: getInitialTodo(),
