@@ -3,6 +3,7 @@ import PageTitle from "./components/PageTitle";
 import styles from "./styles/modules/app.module.scss";
 import AppHeader from "./components/AppHeader";
 import { Toaster } from "react-hot-toast";
+import AppContent from "./components/AppContent";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <PageTitle>To Do List</PageTitle>
         <div className={styles.app__wrapper}></div>
         <AppHeader />
+        <AppContent />
       </div>
       <Toaster
         position="bottom-right"
