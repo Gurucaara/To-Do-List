@@ -10,9 +10,10 @@ function App() {
     <>
       <div className="container">
         <PageTitle>To Do List</PageTitle>
-        <div className={styles.app__wrapper}></div>
-        <AppHeader />
-        <AppContent />
+        <div className={styles.app__wrapper}>
+          <AppHeader />
+          <AppContent />
+        </div>
       </div>
       <Toaster
         position="bottom-right"
